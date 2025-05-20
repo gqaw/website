@@ -1,0 +1,145 @@
+/* Estilo do corpo da página */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    font-family: 'Courier New', Courier, monospace;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Botão de início */
+#startBtn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    color: #000;
+    font-size: 1.3em;
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 15px #fff;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Container principal (invisível no início) */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    perspective: 1000px;
+    opacity: 0;
+    transition: opacity 1.5s ease;
+}
+
+/* Estilo do perfil */
+.profile {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.profile-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    object-fit: cover;
+}
+
+.name {
+    margin-top: 5px;
+    font-size: 0.9em;
+    color: #fff;
+    text-shadow: 0 0 5px #fff;
+}
+
+/* Estilo da página */
+.page {
+    width: 80vw;
+    max-width: 700px;
+    height: 40vh;
+    background-color: #111;
+    border: 1px solid #444;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    padding: 30px;
+    color: #fff;
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-shadow: 0 0 5px #fff;
+    overflow-y: auto;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Efeito de inclinação ao passar o mouse */
+.container:hover .page {
+    transform: rotateY(15deg) rotateX(5deg) scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo do texto */
+pre#description {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    box-sizing: border-box;
+    margin: 0;
+    padding-right: 140px;
+    flex-grow: 1;
+    overflow-y: auto;
+}
+
+/* Botões redondos */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 10px;
+}
+
+.custom-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #222;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+.custom-button img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.custom-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
